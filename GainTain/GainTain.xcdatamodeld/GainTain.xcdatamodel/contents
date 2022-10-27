@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="video_link" optional="YES" attributeType="String"/>
+        <relationship name="exercise_workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseWorkout" inverseName="exercise" inverseEntity="ExerciseWorkout"/>
+        <relationship name="performed_exercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExercise" inverseName="exercise" inverseEntity="PerformedExercise"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="ExerciseWorkout" representedClassName="ExerciseWorkout" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="rest_time_in_seconds" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exercise_workouts" inverseEntity="Exercise"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Set" inverseName="exercise_workout" inverseEntity="Set"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercise_workouts" inverseEntity="Workout"/>
+    </entity>
+    <entity name="PerformedExercise" representedClassName="PerformedExercise" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="performed_exercise" inverseEntity="Exercise"/>
+        <relationship name="performed_sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedSet" inverseName="performed_exercise" inverseEntity="PerformedSet"/>
+        <relationship name="performed_workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PerformedWorkout" inverseName="performed_exercises" inverseEntity="PerformedWorkout"/>
+    </entity>
+    <entity name="PerformedSet" representedClassName="PerformedSet" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="performed_exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PerformedExercise" inverseName="performed_sets" inverseEntity="PerformedExercise"/>
+        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="performed_sets" inverseEntity="Set"/>
+    </entity>
+    <entity name="PerformedWorkout" representedClassName="PerformedWorkout" syncable="YES" codeGenerationType="class">
+        <attribute name="completed_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="started_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="performed_exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExercise" inverseName="performed_workout" inverseEntity="PerformedExercise"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="performed_workouts" inverseEntity="Workout"/>
+    </entity>
+    <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reps" attributeType="Integer 16" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="exercise_workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseWorkout" inverseName="sets" inverseEntity="ExerciseWorkout"/>
+        <relationship name="performed_sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedSet" inverseName="set" inverseEntity="PerformedSet"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="exercise_workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseWorkout" inverseName="workout" inverseEntity="ExerciseWorkout"/>
+        <relationship name="performed_workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedWorkout" inverseName="workout" inverseEntity="PerformedWorkout"/>
+    </entity>
 </model>

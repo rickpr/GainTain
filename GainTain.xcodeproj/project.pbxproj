@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECDB6390290A14270079FB81 /* GainTainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB638F290A14270079FB81 /* GainTainApp.swift */; };
+		ECDB6392290A14270079FB81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6391290A14270079FB81 /* ContentView.swift */; };
+		ECDB6394290A14290079FB81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDB6393290A14290079FB81 /* Assets.xcassets */; };
+		ECDB6397290A14290079FB81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDB6396290A14290079FB81 /* Preview Assets.xcassets */; };
+		ECDB6399290A14290079FB81 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6398290A14290079FB81 /* Persistence.swift */; };
+		ECDB639C290A14290079FB81 /* GainTain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECDB639A290A14290079FB81 /* GainTain.xcdatamodeld */; };
+		ECDB63A7290A14290079FB81 /* GainTainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63A6290A14290079FB81 /* GainTainTests.swift */; };
+		ECDB63B1290A14290079FB81 /* GainTainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63B0290A14290079FB81 /* GainTainUITests.swift */; };
+		ECDB63B3290A14290079FB81 /* GainTainUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63B2290A14290079FB81 /* GainTainUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECDB63A3290A14290079FB81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECDB6384290A14270079FB81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECDB638B290A14270079FB81;
+			remoteInfo = GainTain;
+		};
+		ECDB63AD290A14290079FB81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECDB6384290A14270079FB81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECDB638B290A14270079FB81;
+			remoteInfo = GainTain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ECDB638C290A14270079FB81 /* GainTain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GainTain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDB638F290A14270079FB81 /* GainTainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainTainApp.swift; sourceTree = "<group>"; };
+		ECDB6391290A14270079FB81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECDB6393290A14290079FB81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECDB6396290A14290079FB81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ECDB6398290A14290079FB81 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		ECDB639B290A14290079FB81 /* GainTain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GainTain.xcdatamodel; sourceTree = "<group>"; };
+		ECDB639D290A14290079FB81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECDB63A2290A14290079FB81 /* GainTainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GainTainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDB63A6290A14290079FB81 /* GainTainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainTainTests.swift; sourceTree = "<group>"; };
+		ECDB63AC290A14290079FB81 /* GainTainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GainTainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDB63B0290A14290079FB81 /* GainTainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainTainUITests.swift; sourceTree = "<group>"; };
+		ECDB63B2290A14290079FB81 /* GainTainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainTainUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECDB6389290A14270079FB81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB639F290A14290079FB81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB63A9290A14290079FB81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECDB6383290A14270079FB81 = {
+			isa = PBXGroup;
+			children = (
+				ECDB638E290A14270079FB81 /* GainTain */,
+				ECDB63A5290A14290079FB81 /* GainTainTests */,
+				ECDB63AF290A14290079FB81 /* GainTainUITests */,
+				ECDB638D290A14270079FB81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECDB638D290A14270079FB81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECDB638C290A14270079FB81 /* GainTain.app */,
+				ECDB63A2290A14290079FB81 /* GainTainTests.xctest */,
+				ECDB63AC290A14290079FB81 /* GainTainUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECDB638E290A14270079FB81 /* GainTain */ = {
+			isa = PBXGroup;
+			children = (
+				ECDB638F290A14270079FB81 /* GainTainApp.swift */,
+				ECDB6391290A14270079FB81 /* ContentView.swift */,
+				ECDB6393290A14290079FB81 /* Assets.xcassets */,
+				ECDB6398290A14290079FB81 /* Persistence.swift */,
+				ECDB639D290A14290079FB81 /* Info.plist */,
+				ECDB639A290A14290079FB81 /* GainTain.xcdatamodeld */,
+				ECDB6395290A14290079FB81 /* Preview Content */,
+			);
+			path = GainTain;
+			sourceTree = "<group>";
+		};
+		ECDB6395290A14290079FB81 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ECDB6396290A14290079FB81 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECDB63A5290A14290079FB81 /* GainTainTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECDB63A6290A14290079FB81 /* GainTainTests.swift */,
+			);
+			path = GainTainTests;
+			sourceTree = "<group>";
+		};
+		ECDB63AF290A14290079FB81 /* GainTainUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECDB63B0290A14290079FB81 /* GainTainUITests.swift */,
+				ECDB63B2290A14290079FB81 /* GainTainUITestsLaunchTests.swift */,
+			);
+			path = GainTainUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECDB638B290A14270079FB81 /* GainTain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECDB63B6290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTain" */;
+			buildPhases = (
+				ECDB6388290A14270079FB81 /* Sources */,
+				ECDB6389290A14270079FB81 /* Frameworks */,
+				ECDB638A290A14270079FB81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GainTain;
+			productName = GainTain;
+			productReference = ECDB638C290A14270079FB81 /* GainTain.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECDB63A1290A14290079FB81 /* GainTainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECDB63B9290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTainTests" */;
+			buildPhases = (
+				ECDB639E290A14290079FB81 /* Sources */,
+				ECDB639F290A14290079FB81 /* Frameworks */,
+				ECDB63A0290A14290079FB81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECDB63A4290A14290079FB81 /* PBXTargetDependency */,
+			);
+			name = GainTainTests;
+			productName = GainTainTests;
+			productReference = ECDB63A2290A14290079FB81 /* GainTainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECDB63AB290A14290079FB81 /* GainTainUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECDB63BC290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTainUITests" */;
+			buildPhases = (
+				ECDB63A8290A14290079FB81 /* Sources */,
+				ECDB63A9290A14290079FB81 /* Frameworks */,
+				ECDB63AA290A14290079FB81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECDB63AE290A14290079FB81 /* PBXTargetDependency */,
+			);
+			name = GainTainUITests;
+			productName = GainTainUITests;
+			productReference = ECDB63AC290A14290079FB81 /* GainTainUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECDB6384290A14270079FB81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					ECDB638B290A14270079FB81 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					ECDB63A1290A14290079FB81 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = ECDB638B290A14270079FB81;
+					};
+					ECDB63AB290A14290079FB81 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = ECDB638B290A14270079FB81;
+					};
+				};
+			};
+			buildConfigurationList = ECDB6387290A14270079FB81 /* Build configuration list for PBXProject "GainTain" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECDB6383290A14270079FB81;
+			productRefGroup = ECDB638D290A14270079FB81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECDB638B290A14270079FB81 /* GainTain */,
+				ECDB63A1290A14290079FB81 /* GainTainTests */,
+				ECDB63AB290A14290079FB81 /* GainTainUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECDB638A290A14270079FB81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDB6397290A14290079FB81 /* Preview Assets.xcassets in Resources */,
+				ECDB6394290A14290079FB81 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB63A0290A14290079FB81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB63AA290A14290079FB81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECDB6388290A14270079FB81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDB639C290A14290079FB81 /* GainTain.xcdatamodeld in Sources */,
+				ECDB6399290A14290079FB81 /* Persistence.swift in Sources */,
+				ECDB6392290A14270079FB81 /* ContentView.swift in Sources */,
+				ECDB6390290A14270079FB81 /* GainTainApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB639E290A14290079FB81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDB63A7290A14290079FB81 /* GainTainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECDB63A8290A14290079FB81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDB63B3290A14290079FB81 /* GainTainUITestsLaunchTests.swift in Sources */,
+				ECDB63B1290A14290079FB81 /* GainTainUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECDB63A4290A14290079FB81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECDB638B290A14270079FB81 /* GainTain */;
+			targetProxy = ECDB63A3290A14290079FB81 /* PBXContainerItemProxy */;
+		};
+		ECDB63AE290A14290079FB81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECDB638B290A14270079FB81 /* GainTain */;
+			targetProxy = ECDB63AD290A14290079FB81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ECDB63B4290A14290079FB81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECDB63B5290A14290079FB81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECDB63B7290A14290079FB81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GainTain/Preview Content\"";
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECDB63B8290A14290079FB81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GainTain/Preview Content\"";
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECDB63BA290A14290079FB81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GainTain.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GainTain";
+			};
+			name = Debug;
+		};
+		ECDB63BB290A14290079FB81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GainTain.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GainTain";
+			};
+			name = Release;
+		};
+		ECDB63BD290A14290079FB81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GainTain;
+			};
+			name = Debug;
+		};
+		ECDB63BE290A14290079FB81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY22G4BA5Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adalida.design.GainTainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GainTain;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECDB6387290A14270079FB81 /* Build configuration list for PBXProject "GainTain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDB63B4290A14290079FB81 /* Debug */,
+				ECDB63B5290A14290079FB81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECDB63B6290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDB63B7290A14290079FB81 /* Debug */,
+				ECDB63B8290A14290079FB81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECDB63B9290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDB63BA290A14290079FB81 /* Debug */,
+				ECDB63BB290A14290079FB81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECDB63BC290A14290079FB81 /* Build configuration list for PBXNativeTarget "GainTainUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDB63BD290A14290079FB81 /* Debug */,
+				ECDB63BE290A14290079FB81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECDB639A290A14290079FB81 /* GainTain.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECDB639B290A14290079FB81 /* GainTain.xcdatamodel */,
+			);
+			currentVersion = ECDB639B290A14290079FB81 /* GainTain.xcdatamodel */;
+			path = GainTain.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ECDB6384290A14270079FB81 /* Project object */;
+}

@@ -19,6 +19,7 @@
     </entity>
     <entity name="PerformedExercise" representedClassName="PerformedExercise" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="ordering" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="performed_exercise" inverseEntity="Exercise"/>
         <relationship name="performed_sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedSet" inverseName="performed_exercise" inverseEntity="PerformedSet"/>
@@ -26,6 +27,7 @@
     </entity>
     <entity name="PerformedSet" representedClassName="PerformedSet" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="ordering" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>

@@ -18,29 +18,27 @@ struct ListWorkouts: View {
     private var workouts: FetchedResults<Workout>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(workouts) { workout in
-                    NavigationLink {
-                        EditWorkout(workout: workout)
-                    } label: {
-                        Text(workout.name ?? "")
-                    }
-                }
-                .onDelete(perform: deleteWorkouts)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addWorkout) {
-                        Label("Add Workout", systemImage: "plus")
-                    }
+        List {
+            ForEach(workouts) { workout in
+                NavigationLink {
+                    EditWorkout(workout: workout)
+                } label: {
+                    Text(workout.name ?? "")
                 }
             }
-            Text("Select a workout")
+            .onDelete(perform: deleteWorkouts)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+            ToolbarItem {
+                Button(action: addWorkout) {
+                    Label("Add Workout", systemImage: "plus")
+                }
+            }
+        }
+        Text("Select a workout")
     }
 
     private func addWorkout() {

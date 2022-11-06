@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC250748290A51AF00AF700A /* DoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC250747290A51AF00AF700A /* DoExercise.swift */; };
+		EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
 		ECA3B1DB290A2AC800A258B3 /* ListExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3B1DA290A2AC800A258B3 /* ListExercises.swift */; };
 		ECC6B1D2290A2B9C00AB3627 /* EditExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D1290A2B9C00AB3627 /* EditExercise.swift */; };
 		ECC6B1D8290A347300AB3627 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D7290A347300AB3627 /* AddExercise.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		EC250747290A51AF00AF700A /* DoExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoExercise.swift; sourceTree = "<group>"; };
+		EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformedExerciseCircle.swift; sourceTree = "<group>"; };
 		ECA3B1DA290A2AC800A258B3 /* ListExercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExercises.swift; sourceTree = "<group>"; };
 		ECC6B1D1290A2B9C00AB3627 /* EditExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExercise.swift; sourceTree = "<group>"; };
 		ECC6B1D7290A347300AB3627 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				EC250747290A51AF00AF700A /* DoExercise.swift */,
 				ECE10A61290A563200BA2694 /* DoSet.swift */,
 				ECC6B1E8290A49BD00AB3627 /* DoWorkout.swift */,
+				EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */,
 			);
 			path = PerformWorkout;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				ECC6B1E4290A460600AB3627 /* EditSet.swift in Sources */,
 				ECC6B1DC290A38F400AB3627 /* EditExerciseWorkout.swift in Sources */,
 				ECC6B1E9290A49BD00AB3627 /* DoWorkout.swift in Sources */,
+				EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */,
 				ECDB63C8290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
 				ECDB6399290A14290079FB81 /* Persistence.swift in Sources */,
 				ECDB6392290A14270079FB81 /* ContentView.swift in Sources */,

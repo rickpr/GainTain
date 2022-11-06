@@ -9,28 +9,49 @@ import SwiftUI
 
 struct DoExercise: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var performed_exercise: PerformedExercise
+    private var performed_exercise: PerformedExercise
     @FetchRequest var performed_sets: FetchedResults<PerformedSet>
     
     init(performed_exercise: PerformedExercise) {
-        _performed_exercise = State(initialValue: performed_exercise)
+        self.performed_exercise = performed_exercise
         _performed_sets = DoExercise.get_performed_sets(
             performed_exercise: performed_exercise
         )
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(performed_sets) { performed_set in
-                    NavigationLink {
-                        DoSet(performed_set: performed_set)
-                    } label: {
-                        Text("\(performed_set.set?.reps ?? 0) reps")
+        VStack(alignment: .center) {
+            Text(performed_exercise.exercise?.name ?? "")
+                .padding(5)
+                .background(Rectangle().fill(Color(uiColor: .systemBackground)).colorInvert())
+                .foregroundColor(Color(uiColor: .systemBackground))
+            Text(performed_exercise.exercise?.notes ?? "")
+                .foregroundColor(Color(uiColor: .secondaryLabel))
+                .padding()
+            Divider()
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Sets")
+                    HStack {
+                        Text("\(performed_sets.count) sets,")
+                        let rep_counts = performed_sets.map { String($0.reps) }
+                        if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
+                            Text("\(rep_counts.joined(separator: ", ")) reps")
+                        } else {
+                            Text("\(rep_counts[0]) reps")
+                        }
                     }
+                    .foregroundColor(Color(uiColor: .secondaryLabel))
                 }
+                .padding()
+                Spacer()
+            }
+            Divider()
+            ForEach(performed_sets) { performed_set in
+                DoSet(performed_set: performed_set)
             }
         }
+        .padding()
     }
  
 
@@ -40,7 +61,7 @@ struct DoExercise: View {
         return FetchRequest<PerformedSet> (
             sortDescriptors: [
                 NSSortDescriptor(
-                    keyPath: \PerformedSet.created_at, ascending: true
+                    keyPath: \PerformedSet.ordering, ascending: true
                 )
             ],
             predicate: NSPredicate(

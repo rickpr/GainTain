@@ -18,33 +18,31 @@ struct EditWorkout: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    Button(role: .destructive) {
-                        dismiss()
-                    } label: {
-                        Text("Cancel").padding()
-                    }
-                    Spacer()
-                    Button {
-                        save_item()
-                        dismiss()
-                    } label: {
-                        Text("Save").padding()
-                    }
-                    .disabled(workout_name == "")
-                }
-                NavigationLink(destination: AddExercise(workout: workout)) {
-                    Text("Add Exercises")
+        VStack {
+            HStack {
+                Button(role: .destructive) {
+                    dismiss()
+                } label: {
+                    Text("Cancel").padding()
                 }
                 Spacer()
-                TextField(
-                    "Editing workout",
-                    text: $workout_name
-                )
-                .padding()
+                Button {
+                    save_item()
+                    dismiss()
+                } label: {
+                    Text("Save").padding()
+                }
+                .disabled(workout_name == "")
             }
+            NavigationLink(destination: AddExercise(workout: workout)) {
+                Text("Add Exercises")
+            }
+            Spacer()
+            TextField(
+                "Editing workout",
+                text: $workout_name
+            )
+            .padding()
         }
     }
     

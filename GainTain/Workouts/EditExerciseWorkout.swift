@@ -18,29 +18,27 @@ struct EditExerciseWorkout: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(sets) { set in
-                    NavigationLink {
-                        EditSet(set: set)
-                    } label: {
-                        Text("\(set.reps) reps")
-                    }
-                }
-                .onDelete(perform: deleteSets)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addSet) {
-                        Label("Add set", systemImage: "plus")
-                    }
+        List {
+            ForEach(sets) { set in
+                NavigationLink {
+                    EditSet(set: set)
+                } label: {
+                    Text("\(set.reps) reps")
                 }
             }
-            Text("Select an exercise")
+            .onDelete(perform: deleteSets)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+            ToolbarItem {
+                Button(action: addSet) {
+                    Label("Add set", systemImage: "plus")
+                }
+            }
+        }
+        Text("Select an exercise")
     }
  
     private func addSet() {
@@ -77,7 +75,7 @@ struct EditExerciseWorkout: View {
         }
     }
 
-    private static func get_sets(
+    static func get_sets(
         exercise_workout: ExerciseWorkout
     ) -> FetchRequest<Set> {
         return FetchRequest<Set> (

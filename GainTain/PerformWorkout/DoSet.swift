@@ -21,41 +21,22 @@ struct DoSet: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Button(role: .destructive) {
-                    dismiss()
-                } label: {
-                    Text("Cancel").padding()
-                }
-                Spacer()
-                Button {
-                    save_item()
-                    dismiss()
-                } label: {
-                    Text("Save").padding()
-                }
-                .disabled(reps <= 0)
-            }
-            
+        HStack {
+            TextField("", value: $weight, format: .number)
+                .multilineTextAlignment(.center)
+                .textFieldStyle(.roundedBorder)
+            Text("lbs")
+            TextField("", value: $reps, format: .number)
+                .multilineTextAlignment(.center)
+                .textFieldStyle(.roundedBorder)
+            Text("reps")
+            Text("_ lbs x _")
         }
-        Spacer()
-        TextField(
-            "Editing reps",
-            value: $reps,
-            format: .number
-        )
-        .padding()
-        Spacer()
-        TextField(
-            "Editing weight",
-            value: $weight,
-            format: .number
-        )
-        .padding()
+        .onChange(of: reps) { newReps in save_set() }
+        .onChange(of: weight) { newWeight in save_set() }
     }
     
-    private func save_item() {
+    private func save_set() {
         withAnimation {
             performed_set.reps = reps
             performed_set.weight = weight

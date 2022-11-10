@@ -47,15 +47,17 @@ struct DoWorkout: View {
                     .frame(minWidth: UIScreen.main.bounds.width)
                 }
             }
-        }
-        .onAppear() {
-            if !performed_exercises.isEmpty {
-                self.current_performed_exercise = performed_exercises[0]
+            
+            .onAppear() {
+                if !performed_exercises.isEmpty {
+                    self.current_performed_exercise = performed_exercises[0]
+                }
             }
-        }
-        if current_performed_exercise != nil {
-            DoExercise(performed_exercise: current_performed_exercise!)
-        }
+            if current_performed_exercise != nil {
+                DoExercise(performed_exercise: current_performed_exercise!)
+            }
+            Spacer()
+        }.navigationBarTitle(performed_workout.workout?.name ?? "Today's Workout")
     }
     
     private static func get_performed_exercises(

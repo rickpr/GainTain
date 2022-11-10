@@ -23,7 +23,7 @@ struct PerformedExerciseCircle: View {
             ZStack {
                 Circle().fill(.foreground)
                 Text(String(number))
-                    .foregroundColor(Color(uiColor: .label))
+                    .foregroundColor(.white)
             }
             .frame(width: 40, height: 40)
             RoundedRectangle(cornerRadius: 1)

@@ -20,41 +20,50 @@ struct DoExercise: View {
     }
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text(performed_exercise.exercise?.name ?? "")
-                .padding(5)
-                .background(Rectangle().fill(Color(uiColor: .systemBackground)).colorInvert())
-                .foregroundColor(Color(uiColor: .systemBackground))
-            Text(performed_exercise.exercise?.notes ?? "")
-                .foregroundColor(Color(uiColor: .secondaryLabel))
-                .padding()
-            Divider()
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Sets")
-                    HStack {
-                        Text("\(performed_sets.count) sets,")
-                        let rep_counts = performed_sets.map { String($0.reps) }
-                        if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
-                            Text("\(rep_counts.joined(separator: ", ")) reps")
-                        } else {
-                            Text("\(rep_counts[0]) reps")
+        ScrollView(.vertical) {
+            VStack(alignment: .center) {
+                Text(performed_exercise.exercise?.name ?? "")
+                    .padding()
+                    .foregroundColor(Color(uiColor: .systemBackground))
+                    .frame(maxWidth: .infinity)
+                    .background(Color(uiColor: .systemBackground).colorInvert())
+                ExerciseNotes(performed_exercise: performed_exercise)
+                Divider()
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Sets")
+                        HStack {
+                            Text("\(performed_sets.count) sets,")
+                            let rep_counts = performed_sets.map { String($0.reps) }
+                            if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
+                                Text("\(rep_counts.joined(separator: ", ")) reps")
+                            } else {
+                                Text("\(rep_counts[0]) reps")
+                            }
                         }
+                        .foregroundColor(Color(uiColor: .secondaryLabel))
                     }
-                    .foregroundColor(Color(uiColor: .secondaryLabel))
+                    .padding()
+                    Spacer()
+                    Button(action: addPerformedSet) {
+                        HStack {
+                            Image(systemName: "plus.circle")
+                            Text("Add Set")
+                        }
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 16))
+                    }
                 }
-                .padding()
-                Spacer()
+                Divider()
+                ForEach(performed_sets) { performed_set in
+                    DoSet(performed_set: performed_set)
+                }
             }
-            Divider()
-            ForEach(performed_sets) { performed_set in
-                DoSet(performed_set: performed_set)
-            }
+            .padding()
         }
-        .padding()
     }
  
-
     private static func get_performed_sets(
         performed_exercise: PerformedExercise
     ) -> FetchRequest<PerformedSet> {
@@ -68,7 +77,27 @@ struct DoExercise: View {
                 format: "performed_exercise == %@",
                 performed_exercise
             ),
-            animation: .default)
+            animation: .default
+        )
+    }
+        
+    private func addPerformedSet() {
+        withAnimation {
+            let last_performed_set_order = performed_sets.last?.ordering ?? 0
+            let newPerformedSet = PerformedSet(context: viewContext)
+            newPerformedSet.performed_exercise = performed_exercise
+            newPerformedSet.created_at = Date()
+            newPerformedSet.updated_at = Date()
+            newPerformedSet.ordering = last_performed_set_order + 1
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 

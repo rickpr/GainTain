@@ -12,6 +12,7 @@ struct EditExercise: View {
     @State private var exercise: Exercise
     @State private var exercise_name: String
     @State private var exercise_notes: String
+    @State private var exercise_video_link: String
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
@@ -19,10 +20,27 @@ struct EditExercise: View {
         _exercise = State(initialValue: exercise)
         _exercise_name = State(initialValue: exercise.name ?? "")
         _exercise_notes = State(initialValue: exercise.notes ?? "")
+        _exercise_video_link = State(initialValue: exercise.video_link ?? "")
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("Name:")
+            TextField(
+                "Editing exercise name",
+                text: $exercise_name
+            ).textFieldStyle(.roundedBorder)
+            Text("Notes:")
+            TextEditor(text: $exercise_notes)
+                .textFieldStyle(.roundedBorder)
+                .border(Color(uiColor: .secondaryLabel))
+            Text("Video Link:")
+            TextField(
+                "Editing video link",
+                text: $exercise_video_link
+            ).textFieldStyle(.roundedBorder)
+            .padding()
+            Spacer()
             HStack {
                 Button(role: .destructive) {
                     dismiss()
@@ -38,23 +56,15 @@ struct EditExercise: View {
                 }
                 .disabled(exercise_name == "")
             }
-            Spacer()
-            TextField(
-                "Editing exercise name",
-                text: $exercise_name
-            )
-            TextField(
-                "Editing exercise notes",
-                text: $exercise_notes
-            )
-            .padding()
         }
+        .padding()
     }
     
     private func save_item() {
         withAnimation {
             exercise.name = exercise_name
             exercise.notes = exercise_notes
+            exercise.video_link = exercise_video_link
             do {
                 try viewContext.save()
             } catch {

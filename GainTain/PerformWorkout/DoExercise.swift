@@ -34,7 +34,10 @@ struct DoExercise: View {
                         Text("Sets")
                         HStack {
                             Text("\(performed_sets.count) sets,")
-                            let rep_counts = performed_sets.map { String($0.reps) }
+                            let rep_counts = performed_sets.map {
+                                String($0.set?.reps ?? 0)
+                                
+                            }
                             if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
                                 Text("\(rep_counts.joined(separator: ", ")) reps")
                             } else {

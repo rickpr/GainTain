@@ -8,11 +8,19 @@
 import SwiftUI
 import CoreData
 
+class CurrentPerformedExcerciseIndex: ObservableObject {
+    @Published var performed_exercise_index: Int = 0
+    
+    func update(new_exercise_index: Int) {
+        performed_exercise_index = new_exercise_index
+    }
+}
+
 struct DoWorkout: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var performed_workout: PerformedWorkout
     @FetchRequest var performed_exercises: FetchedResults<PerformedExercise>
-    @State private var current_performed_exercise: PerformedExercise?
+    @StateObject private var current_performed_exercise_index: CurrentPerformedExcerciseIndex = CurrentPerformedExcerciseIndex()
     
     init(performed_workout: PerformedWorkout) {
         _performed_workout = State(initialValue: performed_workout)
@@ -33,12 +41,12 @@ struct DoWorkout: View {
                         ) { index, performed_exercise in
                             Button(
                                 action: {
-                                    self.current_performed_exercise = performed_exercise
+                                    self.current_performed_exercise_index.update(new_exercise_index: index)
                                 }
                             ) {
                                 PerformedExerciseCircle(
                                     performed_exercise: performed_exercise,
-                                    active: current_performed_exercise == performed_exercise,
+                                    active: current_performed_exercise_index.performed_exercise_index == index,
                                     number: index + 1
                                 )
                             }
@@ -48,13 +56,13 @@ struct DoWorkout: View {
                 }
             }
             
-            .onAppear() {
-                if !performed_exercises.isEmpty {
-                    self.current_performed_exercise = performed_exercises[0]
-                }
-            }
-            if current_performed_exercise != nil {
-                DoExercise(performed_exercise: current_performed_exercise!)
+            if !performed_exercises.isEmpty {
+                DoExercise(
+                    performed_exercise: performed_exercises[
+                        current_performed_exercise_index.performed_exercise_index
+                    ]
+                )
+                
             }
             Spacer()
         }.navigationBarTitle(performed_workout.workout?.name ?? "Today's Workout")

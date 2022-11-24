@@ -64,6 +64,7 @@ struct DoExercise: View {
                 }
             }
             .padding()
+            RestTimer()
         }
     }
  

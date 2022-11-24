@@ -8,25 +8,40 @@
 import SwiftUI
 
 struct EditExerciseWorkout: View {
+    @State private var is_superset: Bool
     @State private var exercise_workout: ExerciseWorkout
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest var sets: FetchedResults<Set>
     
     init(exercise_workout: ExerciseWorkout) {
         _exercise_workout = State(initialValue: exercise_workout)
+        _is_superset = State(initialValue: exercise_workout.superset_with_next_exercise)
         _sets = EditExerciseWorkout.get_sets(exercise_workout: exercise_workout)
     }
     
     var body: some View {
-        List {
-            ForEach(sets) { set in
-                NavigationLink {
-                    EditSet(set: set)
-                } label: {
-                    Text("\(set.reps) reps")
+        VStack {
+            Toggle(isOn: Binding<Bool>(
+                
+                get: { exercise_workout.superset_with_next_exercise },
+                set: {
+                    exercise_workout.superset_with_next_exercise = $0
+                    save()
                 }
+                
+            )) {
+                Text("Superset with next exercise")
             }
-            .onDelete(perform: deleteSets)
+            List {
+                ForEach(sets) { set in
+                    NavigationLink {
+                        EditSet(set: set)
+                    } label: {
+                        Text("\(set.reps) reps")
+                    }
+                }
+                .onDelete(perform: deleteSets)
+            }
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -48,30 +63,25 @@ struct EditExerciseWorkout: View {
             newSet.updated_at = Date()
             newSet.reps = 0
             newSet.exercise_workout = exercise_workout
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            save()
         }
     }
 
     private func deleteSets(offsets: IndexSet) {
         withAnimation {
             offsets.map { sets[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            save()
+        }
+    }
+    
+    private func save() {
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 

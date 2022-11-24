@@ -44,6 +44,9 @@
 		ECDB63C8290A22BB0079FB81 /* ListWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63C7290A22BB0079FB81 /* ListWorkouts.swift */; };
 		ECDB63C9290A22BB0079FB81 /* ListWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63C7290A22BB0079FB81 /* ListWorkouts.swift */; };
 		ECDB63CA290A22BB0079FB81 /* ListWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB63C7290A22BB0079FB81 /* ListWorkouts.swift */; };
+		ECDE30B0292F51C400BC1B46 /* RestTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE30AF292F51C400BC1B46 /* RestTimer.swift */; };
+		ECDE30B1292F51C400BC1B46 /* RestTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE30AF292F51C400BC1B46 /* RestTimer.swift */; };
+		ECDE30B2292F51C400BC1B46 /* RestTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE30AF292F51C400BC1B46 /* RestTimer.swift */; };
 		ECE10A62290A563200BA2694 /* DoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE10A61290A563200BA2694 /* DoSet.swift */; };
 		ECE10A63290A563200BA2694 /* DoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE10A61290A563200BA2694 /* DoSet.swift */; };
 		ECE10A64290A563200BA2694 /* DoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE10A61290A563200BA2694 /* DoSet.swift */; };
@@ -94,6 +97,7 @@
 		ECDB63BF290A221B0079FB81 /* EditWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkout.swift; sourceTree = "<group>"; };
 		ECDB63C3290A22290079FB81 /* PerformWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformWorkout.swift; sourceTree = "<group>"; };
 		ECDB63C7290A22BB0079FB81 /* ListWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorkouts.swift; sourceTree = "<group>"; };
+		ECDE30AF292F51C400BC1B46 /* RestTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimer.swift; sourceTree = "<group>"; };
 		ECE10A61290A563200BA2694 /* DoSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +165,7 @@
 				EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */,
 				EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */,
 				EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */,
+				ECDE30AF292F51C400BC1B46 /* RestTimer.swift */,
 			);
 			path = PerformWorkout;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				ECC6B1E9290A49BD00AB3627 /* DoWorkout.swift in Sources */,
 				EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */,
 				ECDB63C8290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
+				ECDE30B0292F51C400BC1B46 /* RestTimer.swift in Sources */,
 				ECDB6399290A14290079FB81 /* Persistence.swift in Sources */,
 				ECDB6392290A14270079FB81 /* ContentView.swift in Sources */,
 				ECC6B1D8290A347300AB3627 /* AddExercise.swift in Sources */,
@@ -393,6 +399,7 @@
 				ECE10A63290A563200BA2694 /* DoSet.swift in Sources */,
 				ECDB63C1290A221B0079FB81 /* EditWorkout.swift in Sources */,
 				ECDB63C9290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
+				ECDE30B1292F51C400BC1B46 /* RestTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +412,7 @@
 				ECC6B1EB290A49BD00AB3627 /* DoWorkout.swift in Sources */,
 				ECC6B1E6290A460600AB3627 /* EditSet.swift in Sources */,
 				ECDB63C6290A22290079FB81 /* PerformWorkout.swift in Sources */,
+				ECDE30B2292F51C400BC1B46 /* RestTimer.swift in Sources */,
 				ECC6B1DA290A347300AB3627 /* AddExercise.swift in Sources */,
 				ECDB63B3290A14290079FB81 /* GainTainUITestsLaunchTests.swift in Sources */,
 				ECE10A64290A563200BA2694 /* DoSet.swift in Sources */,

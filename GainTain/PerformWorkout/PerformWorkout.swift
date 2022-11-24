@@ -65,6 +65,7 @@ struct PerformWorkout: View {
                 let newPerformedExercise = PerformedExercise(context: viewContext)
                 newPerformedExercise.performed_workout = newPerformedWorkout
                 newPerformedExercise.exercise = exerciseWorkout.exercise
+                newPerformedExercise.superset_with_next_exercise = exerciseWorkout.superset_with_next_exercise
                 newPerformedExercise.ordering = Int16(index + 1)
                 let sets = exerciseWorkout.sets?.sortedArray(using: [NSSortDescriptor(keyPath: \Set.created_at, ascending: true)])
                 for (index, set) in (sets ?? []).enumerated() {

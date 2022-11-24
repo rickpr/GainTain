@@ -19,13 +19,25 @@ struct EditWorkout: View {
     
     var body: some View {
         VStack {
+            TextField(
+                "Editing workout",
+                text: $workout_name
+            )
+            .padding()
+            
+            Spacer()
+            AddExercise(workout: workout)
+            Spacer()
+            
             HStack {
                 Button(role: .destructive) {
                     dismiss()
                 } label: {
                     Text("Cancel").padding()
                 }
+                
                 Spacer()
+                
                 Button {
                     save_item()
                     dismiss()
@@ -34,15 +46,6 @@ struct EditWorkout: View {
                 }
                 .disabled(workout_name == "")
             }
-            NavigationLink(destination: AddExercise(workout: workout)) {
-                Text("Add Exercises")
-            }
-            Spacer()
-            TextField(
-                "Editing workout",
-                text: $workout_name
-            )
-            .padding()
         }
     }
     

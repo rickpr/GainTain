@@ -11,11 +11,13 @@ struct PerformedExerciseCircle: View {
     private var performed_exercise: PerformedExercise
     private var active : Bool
     private var number: Int
+    private var is_superset: Bool
     
     init(performed_exercise: PerformedExercise, active: Bool, number: Int) {
         self.performed_exercise = performed_exercise
         self.active = active
         self.number = number
+        self.is_superset = performed_exercise.superset_with_next_exercise
     }
     
     var body: some View {
@@ -25,7 +27,7 @@ struct PerformedExerciseCircle: View {
                 Text(String(number))
                     .foregroundColor(.white)
             }
-            .frame(width: 40, height: 40)
+            .frame(width: is_superset ? 20 : 40, height: 40)
             RoundedRectangle(cornerRadius: 1)
                 .fill(active ? Color(uiColor: .link) : Color(uiColor: .systemBackground))
                 .frame(width: 40, height: 5)

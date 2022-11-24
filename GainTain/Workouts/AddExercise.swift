@@ -40,7 +40,7 @@ struct AddExercise: View {
                 EditButton()
             }
             ToolbarItem {
-                Menu("Select an Exercise") {
+                Menu("Add an Exercise") {
                     ForEach(exercises) { exercise in
                         Button(
                             exercise.name ?? "Untitled Exercise",
@@ -50,7 +50,6 @@ struct AddExercise: View {
                 }
             }
         }
-        Text("Select an exercise")
     }
     
     private func addExerciseWorkout(exercise: Exercise) {

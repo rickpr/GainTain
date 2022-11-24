@@ -26,9 +26,13 @@ struct ExerciseNotes: View {
                     placeholder: { ProgressView() }
                 )
             }
-            Text(performed_exercise.exercise?.notes ?? "")
-                .foregroundColor(Color(uiColor: .secondaryLabel))
-                .padding()
+            VStack {
+                Text(performed_exercise.exercise?.name ?? "")
+                    .fontWeight(.bold)
+                Text(performed_exercise.exercise?.notes ?? "")
+                    .foregroundColor(Color(uiColor: .secondaryLabel))
+                    .padding()
+            }
         }
         if thumbnailLink == nil {
             return AnyView(content)

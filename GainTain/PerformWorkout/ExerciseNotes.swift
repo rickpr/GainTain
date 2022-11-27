@@ -15,17 +15,7 @@ struct ExerciseNotes: View {
     }
     
     var body: some View {
-        let thumbnailLink = self.thumbnailLink()
         let content = HStack {
-            if thumbnailLink != nil {
-                AsyncImage(
-                    url: URL(string: thumbnailLink!),
-                    content: { image in
-                        image.resizable().aspectRatio(contentMode: .fit)
-                    },
-                    placeholder: { ProgressView() }
-                )
-            }
             VStack {
                 Text(performed_exercise.exercise?.name ?? "")
                     .fontWeight(.bold)
@@ -34,33 +24,15 @@ struct ExerciseNotes: View {
                     .padding()
             }
         }
-        if thumbnailLink == nil {
-            return AnyView(content)
-        } else {
+        if self.performed_exercise.exercise?.video_link != nil {
             return AnyView(NavigationLink(
                 destination: ExerciseVideo(exercise: performed_exercise.exercise!)
             ) {
                 content
             })
+        } else {
+            return AnyView(content)
         }
-    }
-    
-    private func thumbnailLink() -> String? {
-        guard let videoLink = self.performed_exercise.exercise?.video_link else {
-            return nil
-        }
-            
-        var videoId: String? = nil
-        if videoLink.contains("youtube") && videoLink.contains("=") {
-            videoId = videoLink.components(separatedBy: "=").last
-        }
-        if videoLink.contains("youtu.be") {
-            videoId = videoLink.components(separatedBy: "/").last
-        }
-        if videoId != nil {
-            return "https://i3.ytimg.com/vi/\(videoId!)/0.jpg"
-        }
-        return nil
     }
 }
 

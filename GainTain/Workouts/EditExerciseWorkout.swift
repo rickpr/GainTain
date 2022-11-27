@@ -37,7 +37,7 @@ struct EditExerciseWorkout: View {
                     NavigationLink {
                         EditSet(set: set)
                     } label: {
-                        Text("\(set.reps) reps")
+                        Text("\(set.min_reps) reps")
                     }
                 }
                 .onDelete(perform: deleteSets)
@@ -61,7 +61,7 @@ struct EditExerciseWorkout: View {
             let newSet = Set(context: viewContext)
             newSet.created_at = Date()
             newSet.updated_at = Date()
-            newSet.reps = 0
+            newSet.min_reps = 1
             newSet.exercise_workout = exercise_workout
             save()
         }

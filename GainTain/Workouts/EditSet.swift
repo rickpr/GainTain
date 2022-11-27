@@ -10,13 +10,15 @@ import CoreData
 
 struct EditSet: View {
     @State private var set: Set
-    @State private var reps: Int16
+    @State private var min_reps: Int16
+    @State private var max_reps: Int16
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
     init(set: Set) {
         _set = State(initialValue: set)
-        _reps = State(initialValue: set.reps)
+        _min_reps = State(initialValue: set.min_reps)
+        _max_reps = State(initialValue: set.max_reps)
     }
     
     var body: some View {
@@ -34,14 +36,20 @@ struct EditSet: View {
                 } label: {
                     Text("Save").padding()
                 }
-                .disabled(reps <= 0)
+                .disabled(min_reps <= 0 || min_reps >= max_reps)
             }
             
         }
         Spacer()
         TextField(
-            "Editing set",
-            value: $reps,
+            "Minimum reps to do",
+            value: $min_reps,
+            format: .number
+        )
+        .padding()
+        TextField(
+            "Maximum reps to do (optional)",
+            value: $max_reps,
             format: .number
         )
         .padding()
@@ -49,7 +57,8 @@ struct EditSet: View {
     
     private func save_item() {
         withAnimation {
-            set.reps = reps
+            set.min_reps = min_reps
+            set.max_reps = max_reps
             do {
                 try viewContext.save()
             } catch {

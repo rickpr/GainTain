@@ -35,8 +35,7 @@ struct DoExercise: View {
                         HStack {
                             Text("\(performed_sets.count) sets,")
                             let rep_counts = performed_sets.map {
-                                String($0.set?.reps ?? 0)
-                                
+                                String($0.set?.min_reps ?? 0)
                             }
                             if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
                                 Text("\(rep_counts.joined(separator: ", ")) reps")
@@ -102,6 +101,21 @@ struct DoExercise: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+    
+    private static func formatReps(performed_sets: [PerformedSet]) -> String {
+        let rep_counts = performed_sets.map {
+            let min_reps = $0.set?.min_reps
+            let max_reps = $0.set?.max_reps
+            if max_reps != nil && min_reps != nil && max_reps! > min_reps! {
+                return "\(min_reps!)-\(max_reps!)"
+            }
+            return String(min_reps ?? 0)
+        }
+        if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
+            return "\(rep_counts.joined(separator: ", ")) reps"
+        }
+        return "\(rep_counts[0]) reps"
     }
 }
 

@@ -4,6 +4,7 @@
 //
 //  Created by fdisk on 11/9/22.
 //
+// Shows exercise description and offers a link to the video.
 
 import SwiftUI
 
@@ -15,7 +16,7 @@ struct ExerciseNotes: View {
     }
     
     var body: some View {
-        let content = HStack {
+        HStack {
             VStack {
                 Text(performed_exercise.exercise?.name ?? "")
                     .fontWeight(.bold)
@@ -23,15 +24,13 @@ struct ExerciseNotes: View {
                     .foregroundColor(Color(uiColor: .secondaryLabel))
                     .padding()
             }
-        }
-        if self.performed_exercise.exercise?.video_link != nil {
-            return AnyView(NavigationLink(
-                destination: ExerciseVideo(exercise: performed_exercise.exercise!)
-            ) {
-                content
-            })
-        } else {
-            return AnyView(content)
+            if self.performed_exercise.exercise?.video_link != nil {
+                NavigationLink(
+                    destination: ExerciseVideo(exercise: performed_exercise.exercise!)
+                ) {
+                    Label("Video", systemImage: "play")
+                }
+            }
         }
     }
 }

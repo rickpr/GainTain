@@ -44,7 +44,20 @@ struct PerformWorkout: View {
                     ForEach(workouts) { workout in
                         Button(
                             workout.name ?? "Untitled Workout",
-                            action: { addPerformedWorkout(workout: workout) }
+                            action: {
+                                withAnimation {
+                                    PerformWorkout.addPerformedWorkout(workout: workout)
+                                    do {
+                                        try viewContext.save()
+                                        
+                                    } catch {
+                                        // Replace this implementation with code to handle the error appropriately.
+                                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                                        let nsError = error as NSError
+                                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                                    }
+                                }
+                            }
                         )
                     }
                 }
@@ -53,37 +66,34 @@ struct PerformWorkout: View {
         Text("Select an exercise")
     }
     
-    private func addPerformedWorkout(workout: Workout) {
-        withAnimation {
-            let newPerformedWorkout = PerformedWorkout(context: viewContext)
-            newPerformedWorkout.created_at = Date()
-            newPerformedWorkout.updated_at = Date()
-            newPerformedWorkout.workout = workout
-            let exercise_workouts = workout.exercise_workouts?.sortedArray(using: [NSSortDescriptor(keyPath: \ExerciseWorkout.created_at, ascending: true)])
-            for (index, exercise_workout) in (exercise_workouts ?? []).enumerated() {
-                let exerciseWorkout = exercise_workout as! ExerciseWorkout
-                let newPerformedExercise = PerformedExercise(context: viewContext)
-                newPerformedExercise.performed_workout = newPerformedWorkout
-                newPerformedExercise.exercise = exerciseWorkout.exercise
-                newPerformedExercise.superset_with_next_exercise = exerciseWorkout.superset_with_next_exercise
-                newPerformedExercise.ordering = Int16(index + 1)
-                let sets = exerciseWorkout.sets?.sortedArray(using: [NSSortDescriptor(keyPath: \Set.created_at, ascending: true)])
-                for (index, set) in (sets ?? []).enumerated() {
-                    let newPerformedSet = PerformedSet(context: viewContext)
-                    newPerformedSet.performed_exercise = newPerformedExercise
-                    newPerformedSet.set = set as? Set
-                    newPerformedSet.ordering = Int16(index + 1)
-                }
-            }
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    static func addPerformedWorkout(workout: Workout) -> PerformedWorkout {
+        let newPerformedWorkout = PerformedWorkout(context: workout.managedObjectContext!)
+        newPerformedWorkout.created_at = Date()
+        newPerformedWorkout.updated_at = Date()
+        newPerformedWorkout.workout = workout
+        var exercise_workouts: [ExerciseWorkout] = []
+        for exercise_workout in workout.exercise_workouts! {
+            exercise_workouts.append(exercise_workout as! ExerciseWorkout)
+        }
+        exercise_workouts.sort {
+            $0.created_at! < $1.created_at!
+        }
+
+        for (index, exercise_workout) in exercise_workouts.enumerated() {
+            let newPerformedExercise = PerformedExercise(context: workout.managedObjectContext!)
+            newPerformedExercise.performed_workout = newPerformedWorkout
+            newPerformedExercise.exercise = exercise_workout.exercise
+            newPerformedExercise.superset_with_next_exercise = exercise_workout.superset_with_next_exercise
+            newPerformedExercise.ordering = Int16(index + 1)
+            let sets = exercise_workout.sets?.sortedArray(using: [NSSortDescriptor(keyPath: \Set.created_at, ascending: true)])
+            for (index, set) in (sets ?? []).enumerated() {
+                let newPerformedSet = PerformedSet(context: workout.managedObjectContext!)
+                newPerformedSet.performed_exercise = newPerformedExercise
+                newPerformedSet.set = set as? Set
+                newPerformedSet.ordering = Int16(index + 1)
             }
         }
+        return newPerformedWorkout
     }
     
     private func deletePerformedWorkouts(offsets: IndexSet) {
@@ -104,7 +114,7 @@ struct PerformWorkout: View {
     
     
     
-    private static func get_performed_workouts() -> FetchRequest<PerformedWorkout> {
+    static func get_performed_workouts() -> FetchRequest<PerformedWorkout> {
         return FetchRequest<PerformedWorkout> (
             sortDescriptors: [
                 NSSortDescriptor(

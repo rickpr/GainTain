@@ -11,14 +11,14 @@ import CoreData
 struct EditSet: View {
     @State private var set: Set
     @State private var min_reps: Int16
-    @State private var max_reps: Int16
+    @State private var max_reps: Int16?
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
     init(set: Set) {
         _set = State(initialValue: set)
         _min_reps = State(initialValue: set.min_reps)
-        _max_reps = State(initialValue: set.max_reps)
+        _max_reps = State(initialValue: set.max_reps?.int16Value)
     }
     
     var body: some View {
@@ -36,7 +36,10 @@ struct EditSet: View {
                 } label: {
                     Text("Save").padding()
                 }
-                .disabled(min_reps <= 0 || min_reps >= max_reps)
+                .disabled(
+                    min_reps <= 0 ||
+                    (max_reps != nil && min_reps >= max_reps!)
+                )
             }
             
         }
@@ -58,7 +61,7 @@ struct EditSet: View {
     private func save_item() {
         withAnimation {
             set.min_reps = min_reps
-            set.max_reps = max_reps
+            set.max_reps = max_reps != nil ? NSNumber(value: max_reps!) : nil
             do {
                 try viewContext.save()
             } catch {

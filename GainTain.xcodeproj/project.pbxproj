@@ -8,11 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		EC250748290A51AF00AF700A /* DoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC250747290A51AF00AF700A /* DoExercise.swift */; };
+		EC2CD98729347E9400AA2F5A /* PerformWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2CD98629347E9400AA2F5A /* PerformWorkoutTests.swift */; };
+		EC2CD9892934A90100AA2F5A /* GainTainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB638F290A14270079FB81 /* GainTainApp.swift */; };
+		EC2CD98A2934A94900AA2F5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6398290A14290079FB81 /* Persistence.swift */; };
 		EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
 		EC7BF941291CAF8500BC9B9D /* ExerciseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */; };
 		EC7BF943291CB78E00BC9B9D /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */; };
 		EC7BF946291CBBEA00BC9B9D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF945291CBBEA00BC9B9D /* WebView.swift */; };
 		ECA3B1DB290A2AC800A258B3 /* ListExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3B1DA290A2AC800A258B3 /* ListExercises.swift */; };
+		ECAB80BD2934204E0012CE98 /* GainTainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB638F290A14270079FB81 /* GainTainApp.swift */; };
+		ECAB80BE293420510012CE98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6391290A14270079FB81 /* ContentView.swift */; };
+		ECAB80BF293420510012CE98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6391290A14270079FB81 /* ContentView.swift */; };
+		ECAB80C0293420540012CE98 /* ListExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3B1DA290A2AC800A258B3 /* ListExercises.swift */; };
+		ECAB80C1293420550012CE98 /* ListExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3B1DA290A2AC800A258B3 /* ListExercises.swift */; };
+		ECAB80C2293420570012CE98 /* EditExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D1290A2B9C00AB3627 /* EditExercise.swift */; };
+		ECAB80C3293420580012CE98 /* EditExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D1290A2B9C00AB3627 /* EditExercise.swift */; };
+		ECAB80C42934206B0012CE98 /* DoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC250747290A51AF00AF700A /* DoExercise.swift */; };
+		ECAB80C52934206C0012CE98 /* DoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC250747290A51AF00AF700A /* DoExercise.swift */; };
+		ECAB80C6293420700012CE98 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
+		ECAB80C7293420700012CE98 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
+		ECAB80C8293420740012CE98 /* ExerciseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */; };
+		ECAB80C9293420740012CE98 /* ExerciseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */; };
+		ECAB80CA293420770012CE98 /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */; };
+		ECAB80CB293420780012CE98 /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */; };
+		ECAB80CC2934207D0012CE98 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF945291CBBEA00BC9B9D /* WebView.swift */; };
+		ECAB80CD2934207D0012CE98 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF945291CBBEA00BC9B9D /* WebView.swift */; };
+		ECAB80CF293420810012CE98 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB6398290A14290079FB81 /* Persistence.swift */; };
+		ECAB80D02934209A0012CE98 /* GainTain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECDB639A290A14290079FB81 /* GainTain.xcdatamodeld */; };
+		ECAB80D12934209B0012CE98 /* GainTain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECDB639A290A14290079FB81 /* GainTain.xcdatamodeld */; };
+		ECAB80D2293420A40012CE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDB6393290A14290079FB81 /* Assets.xcassets */; };
+		ECAB80D3293420A40012CE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECDB6393290A14290079FB81 /* Assets.xcassets */; };
 		ECC6B1D2290A2B9C00AB3627 /* EditExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D1290A2B9C00AB3627 /* EditExercise.swift */; };
 		ECC6B1D8290A347300AB3627 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D7290A347300AB3627 /* AddExercise.swift */; };
 		ECC6B1D9290A347300AB3627 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1D7290A347300AB3627 /* AddExercise.swift */; };
@@ -71,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		EC250747290A51AF00AF700A /* DoExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoExercise.swift; sourceTree = "<group>"; };
+		EC2CD98629347E9400AA2F5A /* PerformWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformWorkoutTests.swift; sourceTree = "<group>"; };
 		EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformedExerciseCircle.swift; sourceTree = "<group>"; };
 		EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNotes.swift; sourceTree = "<group>"; };
 		EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVideo.swift; sourceTree = "<group>"; };
@@ -220,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				ECDB63A6290A14290079FB81 /* GainTainTests.swift */,
+				EC2CD98629347E9400AA2F5A /* PerformWorkoutTests.swift */,
 			);
 			path = GainTainTests;
 			sourceTree = "<group>";
@@ -346,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECAB80D2293420A40012CE98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECAB80D3293420A40012CE98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,14 +420,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC6B1EA290A49BD00AB3627 /* DoWorkout.swift in Sources */,
+				EC2CD98729347E9400AA2F5A /* PerformWorkoutTests.swift in Sources */,
+				ECAB80BE293420510012CE98 /* ContentView.swift in Sources */,
 				ECC6B1D9290A347300AB3627 /* AddExercise.swift in Sources */,
 				ECDB63A7290A14290079FB81 /* GainTainTests.swift in Sources */,
+				ECAB80CA293420770012CE98 /* ExerciseVideo.swift in Sources */,
+				ECAB80D02934209A0012CE98 /* GainTain.xcdatamodeld in Sources */,
 				ECC6B1E5290A460600AB3627 /* EditSet.swift in Sources */,
+				ECAB80C6293420700012CE98 /* PerformedExerciseCircle.swift in Sources */,
 				ECDB63C5290A22290079FB81 /* PerformWorkout.swift in Sources */,
 				ECC6B1DD290A38F400AB3627 /* EditExerciseWorkout.swift in Sources */,
+				EC2CD98A2934A94900AA2F5A /* Persistence.swift in Sources */,
+				EC2CD9892934A90100AA2F5A /* GainTainApp.swift in Sources */,
 				ECE10A63290A563200BA2694 /* DoSet.swift in Sources */,
+				ECAB80C0293420540012CE98 /* ListExercises.swift in Sources */,
 				ECDB63C1290A221B0079FB81 /* EditWorkout.swift in Sources */,
+				ECAB80CC2934207D0012CE98 /* WebView.swift in Sources */,
+				ECAB80C3293420580012CE98 /* EditExercise.swift in Sources */,
 				ECDB63C9290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
+				ECAB80C8293420740012CE98 /* ExerciseNotes.swift in Sources */,
+				ECAB80C42934206B0012CE98 /* DoExercise.swift in Sources */,
 				ECDE30B1292F51C400BC1B46 /* RestTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,16 +449,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECDB63CA290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
+				ECAB80CD2934207D0012CE98 /* WebView.swift in Sources */,
 				ECDB63C2290A221B0079FB81 /* EditWorkout.swift in Sources */,
+				ECAB80CF293420810012CE98 /* Persistence.swift in Sources */,
+				ECAB80C7293420700012CE98 /* PerformedExerciseCircle.swift in Sources */,
+				ECAB80CB293420780012CE98 /* ExerciseVideo.swift in Sources */,
+				ECAB80C2293420570012CE98 /* EditExercise.swift in Sources */,
 				ECC6B1EB290A49BD00AB3627 /* DoWorkout.swift in Sources */,
 				ECC6B1E6290A460600AB3627 /* EditSet.swift in Sources */,
 				ECDB63C6290A22290079FB81 /* PerformWorkout.swift in Sources */,
+				ECAB80C52934206C0012CE98 /* DoExercise.swift in Sources */,
 				ECDE30B2292F51C400BC1B46 /* RestTimer.swift in Sources */,
 				ECC6B1DA290A347300AB3627 /* AddExercise.swift in Sources */,
 				ECDB63B3290A14290079FB81 /* GainTainUITestsLaunchTests.swift in Sources */,
+				ECAB80BD2934204E0012CE98 /* GainTainApp.swift in Sources */,
 				ECE10A64290A563200BA2694 /* DoSet.swift in Sources */,
+				ECAB80D12934209B0012CE98 /* GainTain.xcdatamodeld in Sources */,
+				ECAB80BF293420510012CE98 /* ContentView.swift in Sources */,
 				ECC6B1DE290A38F400AB3627 /* EditExerciseWorkout.swift in Sources */,
 				ECDB63B1290A14290079FB81 /* GainTainUITests.swift in Sources */,
+				ECAB80C1293420550012CE98 /* ListExercises.swift in Sources */,
+				ECAB80C9293420740012CE98 /* ExerciseNotes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +614,8 @@
 				DEVELOPMENT_TEAM = UY22G4BA5Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = GainTain;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -591,6 +645,8 @@
 				DEVELOPMENT_TEAM = UY22G4BA5Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = GainTain;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

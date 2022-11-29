@@ -34,14 +34,7 @@ struct DoExercise: View {
                         Text("Sets")
                         HStack {
                             Text("\(performed_sets.count) sets,")
-                            let rep_counts = performed_sets.map {
-                                String($0.set?.min_reps ?? 0)
-                            }
-                            if Dictionary(grouping: rep_counts, by: { $0 }).count > 1 {
-                                Text("\(rep_counts.joined(separator: ", ")) reps")
-                            } else {
-                                Text("\(rep_counts[0]) reps")
-                            }
+                            Text(DoExercise.formatReps(performed_sets: performed_sets))
                         }
                         .foregroundColor(Color(uiColor: .secondaryLabel))
                     }
@@ -103,10 +96,10 @@ struct DoExercise: View {
         }
     }
     
-    private static func formatReps(performed_sets: [PerformedSet]) -> String {
+    static func formatReps(performed_sets: any Sequence<PerformedSet>) -> String {
         let rep_counts = performed_sets.map {
             let min_reps = $0.set?.min_reps
-            let max_reps = $0.set?.max_reps
+            let max_reps = $0.set?.max_reps?.int16Value
             if max_reps != nil && min_reps != nil && max_reps! > min_reps! {
                 return "\(min_reps!)-\(max_reps!)"
             }

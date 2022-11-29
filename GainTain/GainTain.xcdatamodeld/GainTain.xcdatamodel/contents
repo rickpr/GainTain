@@ -46,7 +46,7 @@
     </entity>
     <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="max_reps" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="max_reps" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
         <attribute name="min_reps" attributeType="Integer 16" minValueString="0" defaultValueString="1" usesScalarValueType="YES"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="exercise_workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseWorkout" inverseName="sets" inverseEntity="ExerciseWorkout"/>

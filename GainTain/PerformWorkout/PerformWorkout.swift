@@ -70,27 +70,27 @@ struct PerformWorkout: View {
         let newPerformedWorkout = PerformedWorkout(context: workout.managedObjectContext!)
         newPerformedWorkout.created_at = Date()
         newPerformedWorkout.updated_at = Date()
+        print(newPerformedWorkout)
         newPerformedWorkout.workout = workout
-        var exercise_workouts: [ExerciseWorkout] = []
-        for exercise_workout in workout.exercise_workouts! {
-            exercise_workouts.append(exercise_workout as! ExerciseWorkout)
-        }
-        exercise_workouts.sort {
-            $0.created_at! < $1.created_at!
-        }
-
-        for (index, exercise_workout) in exercise_workouts.enumerated() {
-            let newPerformedExercise = PerformedExercise(context: workout.managedObjectContext!)
-            newPerformedExercise.performed_workout = newPerformedWorkout
-            newPerformedExercise.exercise = exercise_workout.exercise
-            newPerformedExercise.superset_with_next_exercise = exercise_workout.superset_with_next_exercise
-            newPerformedExercise.ordering = Int16(index + 1)
-            let sets = exercise_workout.sets?.sortedArray(using: [NSSortDescriptor(keyPath: \Set.created_at, ascending: true)])
-            for (index, set) in (sets ?? []).enumerated() {
-                let newPerformedSet = PerformedSet(context: workout.managedObjectContext!)
-                newPerformedSet.performed_exercise = newPerformedExercise
-                newPerformedSet.set = set as? Set
-                newPerformedSet.ordering = Int16(index + 1)
+        let exercise_workouts = workout.exercise_workouts?.sortedArray(
+            using: [NSSortDescriptor(keyPath: \ExerciseWorkout.created_at, ascending: true)]
+        ) as? [ExerciseWorkout]
+        if exercise_workouts != nil {
+            for (index, exercise_workout) in exercise_workouts!.enumerated() {
+                let newPerformedExercise = PerformedExercise(context: workout.managedObjectContext!)
+                newPerformedExercise.performed_workout = newPerformedWorkout
+                newPerformedExercise.exercise = exercise_workout.exercise
+                newPerformedExercise.superset_with_next_exercise = exercise_workout.superset_with_next_exercise
+                newPerformedExercise.ordering = Int16(index + 1)
+                let sets = exercise_workout.sets?.sortedArray(
+                    using: [NSSortDescriptor(keyPath: \Set.created_at, ascending: true)]
+                )
+                for (index, set) in (sets ?? []).enumerated() {
+                    let newPerformedSet = PerformedSet(context: workout.managedObjectContext!)
+                    newPerformedSet.performed_exercise = newPerformedExercise
+                    newPerformedSet.set = set as? Set
+                    newPerformedSet.ordering = Int16(index + 1)
+                }
             }
         }
         return newPerformedWorkout

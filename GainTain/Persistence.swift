@@ -34,7 +34,10 @@ struct PersistenceController {
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "GainTain")
         if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            let directory = NSTemporaryDirectory()
+            let filename = NSUUID().uuidString
+            let fullURL = NSURL.fileURL(withPathComponents: [directory, filename])
+            container.persistentStoreDescriptions.first!.url = fullURL
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

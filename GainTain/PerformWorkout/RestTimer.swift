@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct RestTimer: View {
-    @State var timeRemaining = 0
+    @State private var timeEndsAt: TimeInterval? = nil
+    @State private var timeRemaining: Double? = nil
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        if timeRemaining > 0 {
-            timeButton(timeText: prettyTime(), timeInSeconds: 0)
+        if timeEndsAt != nil {
+            stopTimeButton(timeText: prettyTime())
                 .onReceive(timer) { _ in
-                    timeRemaining -= 1
+                    if timeEndsAt != nil {
+                        timeRemaining = timeEndsAt! - Date().timeIntervalSinceReferenceDate + 1
+                        if timeRemaining! <= 0 { timeEndsAt = nil }
+                    }
                 }
         } else {
             HStack {
@@ -28,7 +32,21 @@ struct RestTimer: View {
     }
     
     private func timeButton(timeText: String, timeInSeconds: Int) -> some View {
-        Button(action: { self.timeRemaining = timeInSeconds }) {
+        Button(action: {
+            timeEndsAt = Date().timeIntervalSinceReferenceDate + Double(timeInSeconds)
+            timeRemaining = Double(timeInSeconds)
+        }) {
+            Text(timeText)
+                .padding()
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .background(RoundedRectangle(cornerRadius: 16))
+                .padding()
+        }
+    }
+    
+    private func stopTimeButton(timeText: String) -> some View {
+        Button(action: { self.timeEndsAt = nil }) {
             Text(timeText)
                 .padding()
                 .foregroundColor(.white)
@@ -39,8 +57,9 @@ struct RestTimer: View {
     }
     
     private func prettyTime() -> String {
-        let minutes = Int(timeRemaining / 60)
-        var seconds = String(timeRemaining % 60)
+        let timeLeft = Int(timeRemaining ?? 0)
+        let minutes = Int(timeLeft / 60)
+        var seconds = String(timeLeft % 60)
         if seconds.count < 2 { seconds = "0\(seconds)" }
         return "\(minutes):\(seconds)"
     }

@@ -32,36 +32,16 @@ struct DoWorkout: View {
     
     var body: some View {
         VStack {
-            HStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(
-                            Array(performed_exercises.enumerated()),
-                            id: \.offset
-                        ) { index, performed_exercise in
-                            Button(
-                                action: {
-                                    self.current_performed_exercise_index.update(new_exercise_index: index)
-                                }
-                            ) {
-                                PerformedExerciseCircle(
-                                    performed_exercise: performed_exercise,
-                                    active: current_performed_exercise_index.performed_exercise_index == index,
-                                    number: index + 1
-                                )
-                            }
-                        }
-                    }
-                    .frame(minWidth: UIScreen.main.bounds.width)
-                }
-            }
-            
+            PerformedExerciseSelector(
+                performed_exercises: performed_exercises,
+                current_performed_exercise_index: current_performed_exercise_index
+            )
             if !performed_exercises.isEmpty {
                 DoExercise(
                     performed_exercise: performed_exercises[
                         current_performed_exercise_index.performed_exercise_index
                     ]
-                )
+                ).padding()
                 
             }
             Spacer()

@@ -17,21 +17,25 @@ struct ExerciseNotes: View {
     
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(performed_exercise.exercise?.name ?? "")
                     .fontWeight(.bold)
                 Text(performed_exercise.exercise?.notes ?? "")
                     .foregroundColor(Color(uiColor: .secondaryLabel))
-                    .padding()
             }
+            Spacer()
             if self.performed_exercise.exercise?.video_link != nil {
                 NavigationLink(
                     destination: ExerciseVideo(exercise: performed_exercise.exercise!)
                 ) {
-                    Label("Video", systemImage: "play")
+                    Image(systemName: "play.fill")
+                        .padding()
+                        .foregroundColor(Color(.label))
+                        .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(.label)))
                 }
             }
         }
+        .frame(maxWidth: .infinity)
     }
 }
 

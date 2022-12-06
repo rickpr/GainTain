@@ -66,7 +66,7 @@ struct PerformWorkout: View {
         Text("Select an exercise")
     }
     
-    static func addPerformedWorkout(workout: Workout) -> PerformedWorkout {
+    static func addPerformedWorkout(workout: Workout) {
         let newPerformedWorkout = PerformedWorkout(context: workout.managedObjectContext!)
         newPerformedWorkout.created_at = Date()
         newPerformedWorkout.updated_at = Date()
@@ -93,7 +93,6 @@ struct PerformWorkout: View {
                 }
             }
         }
-        return newPerformedWorkout
     }
     
     private func deletePerformedWorkouts(offsets: IndexSet) {

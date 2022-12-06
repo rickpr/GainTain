@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC250748290A51AF00AF700A /* DoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC250747290A51AF00AF700A /* DoExercise.swift */; };
-		EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
+		EC4FFE76293F42610096136B /* PerformedExerciseSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FFE75293F42610096136B /* PerformedExerciseSelector.swift */; };
 		EC7BF941291CAF8500BC9B9D /* ExerciseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */; };
 		EC7BF943291CB78E00BC9B9D /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */; };
 		EC7BF946291CBBEA00BC9B9D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF945291CBBEA00BC9B9D /* WebView.swift */; };
@@ -28,7 +28,6 @@
 		EC96A86D293E12E70072AA35 /* DoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE10A61290A563200BA2694 /* DoSet.swift */; };
 		EC96A86F293E12E90072AA35 /* DoWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6B1E8290A49BD00AB3627 /* DoWorkout.swift */; };
 		EC96A871293E12EC0072AA35 /* ExerciseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */; };
-		EC96A873293E12EF0072AA35 /* PerformedExerciseCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */; };
 		EC96A875293E12F20072AA35 /* ExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */; };
 		EC96A877293E12F50072AA35 /* RestTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE30AF292F51C400BC1B46 /* RestTimer.swift */; };
 		EC96A879293E12F80072AA35 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BF945291CBBEA00BC9B9D /* WebView.swift */; };
@@ -77,7 +76,7 @@
 /* Begin PBXFileReference section */
 		EC250747290A51AF00AF700A /* DoExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoExercise.swift; sourceTree = "<group>"; };
 		EC2CD98629347E9400AA2F5A /* PerformWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformWorkoutTests.swift; sourceTree = "<group>"; };
-		EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformedExerciseCircle.swift; sourceTree = "<group>"; };
+		EC4FFE75293F42610096136B /* PerformedExerciseSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformedExerciseSelector.swift; sourceTree = "<group>"; };
 		EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNotes.swift; sourceTree = "<group>"; };
 		EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVideo.swift; sourceTree = "<group>"; };
 		EC7BF945291CBBEA00BC9B9D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -168,10 +167,10 @@
 				EC250747290A51AF00AF700A /* DoExercise.swift */,
 				ECE10A61290A563200BA2694 /* DoSet.swift */,
 				ECC6B1E8290A49BD00AB3627 /* DoWorkout.swift */,
-				EC6D3D3729179F2B00CE47E5 /* PerformedExerciseCircle.swift */,
 				EC7BF940291CAF8500BC9B9D /* ExerciseNotes.swift */,
 				EC7BF942291CB78E00BC9B9D /* ExerciseVideo.swift */,
 				ECDE30AF292F51C400BC1B46 /* RestTimer.swift */,
+				EC4FFE75293F42610096136B /* PerformedExerciseSelector.swift */,
 			);
 			path = PerformWorkout;
 			sourceTree = "<group>";
@@ -379,10 +378,10 @@
 				ECC6B1DC290A38F400AB3627 /* EditExerciseWorkout.swift in Sources */,
 				EC7BF943291CB78E00BC9B9D /* ExerciseVideo.swift in Sources */,
 				ECC6B1E9290A49BD00AB3627 /* DoWorkout.swift in Sources */,
-				EC6D3D3829179F2B00CE47E5 /* PerformedExerciseCircle.swift in Sources */,
 				ECDB63C8290A22BB0079FB81 /* ListWorkouts.swift in Sources */,
 				ECDE30B0292F51C400BC1B46 /* RestTimer.swift in Sources */,
 				ECDB6399290A14290079FB81 /* Persistence.swift in Sources */,
+				EC4FFE76293F42610096136B /* PerformedExerciseSelector.swift in Sources */,
 				ECDB6392290A14270079FB81 /* ContentView.swift in Sources */,
 				ECC6B1D8290A347300AB3627 /* AddExercise.swift in Sources */,
 				ECA3B1DB290A2AC800A258B3 /* ListExercises.swift in Sources */,
@@ -409,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC96A857293E12C70072AA35 /* GainTainApp.swift in Sources */,
-				EC96A873293E12EF0072AA35 /* PerformedExerciseCircle.swift in Sources */,
 				ECDB63B3290A14290079FB81 /* GainTainUITestsLaunchTests.swift in Sources */,
 				EC96A861293E12D50072AA35 /* EditSet.swift in Sources */,
 				EC96A869293E12E10072AA35 /* PerformWorkout.swift in Sources */,

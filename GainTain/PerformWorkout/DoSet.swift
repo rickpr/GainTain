@@ -26,11 +26,11 @@ struct DoSet: View {
                 .multilineTextAlignment(.center)
                 .textFieldStyle(.roundedBorder)
             Text("lbs")
+            Divider()
             TextField("", value: $reps, format: .number)
                 .multilineTextAlignment(.center)
                 .textFieldStyle(.roundedBorder)
             Text("reps")
-            Text("_ lbs x _")
         }
         .onChange(of: reps) { newReps in save_set() }
         .onChange(of: weight) { newWeight in save_set() }

@@ -22,11 +22,6 @@ struct DoExercise: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .center) {
-                Text(performed_exercise.exercise?.name ?? "")
-                    .padding()
-                    .foregroundColor(Color(uiColor: .systemBackground))
-                    .frame(maxWidth: .infinity)
-                    .background(Color(uiColor: .systemBackground).colorInvert())
                 ExerciseNotes(performed_exercise: performed_exercise)
                 Divider()
                 HStack {
@@ -58,6 +53,8 @@ struct DoExercise: View {
             .padding()
             RestTimer()
         }
+        .padding()
+        .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(.label)))
     }
  
     private static func get_performed_sets(

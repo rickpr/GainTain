@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22G436" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="BodyMeasurement" representedClassName="BodyMeasurement" syncable="YES" codeGenerationType="class">
+        <attribute name="body_fat_percentage" optional="YES" attributeType="Decimal" minValueString="0" maxValueString="100"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="weight_in_pounds" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="caliper_measurement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CaliperMeasurement" inverseName="body_measurement" inverseEntity="CaliperMeasurement"/>
+        <relationship name="progress_photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressPhoto" inverseName="body_measurement" inverseEntity="ProgressPhoto"/>
+        <relationship name="tape_measurement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TapeMeasurement" inverseName="body_measurement" inverseEntity="TapeMeasurement"/>
+    </entity>
+    <entity name="CaliperMeasurement" representedClassName="CaliperMeasurement" syncable="YES" codeGenerationType="class">
+        <attribute name="abdominal_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="chest_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="midaxillary_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="subscapular_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="suprailiac_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="thigh_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="tricep_in_mm" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <relationship name="body_measurement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BodyMeasurement" inverseName="caliper_measurement" inverseEntity="BodyMeasurement"/>
+    </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -44,6 +64,13 @@
         <relationship name="performed_exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedExercise" inverseName="performed_workout" inverseEntity="PerformedExercise"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="performed_workouts" inverseEntity="Workout"/>
     </entity>
+    <entity name="ProgressPhoto" representedClassName="ProgressPhoto" syncable="YES" codeGenerationType="class">
+        <attribute name="back" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="front" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="side" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="body_measurement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BodyMeasurement" inverseName="progress_photo" inverseEntity="BodyMeasurement"/>
+    </entity>
     <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="max_reps" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
@@ -51,6 +78,22 @@
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="exercise_workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseWorkout" inverseName="sets" inverseEntity="ExerciseWorkout"/>
         <relationship name="performed_sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformedSet" inverseName="set" inverseEntity="PerformedSet"/>
+    </entity>
+    <entity name="Superset" representedClassName="Superset" syncable="YES" codeGenerationType="class"/>
+    <entity name="TapeMeasurement" representedClassName="TapeMeasurement" syncable="YES" codeGenerationType="class">
+        <attribute name="chest_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="left_bicep_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="left_calf_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="left_forearm_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="left_thigh_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="right_bicep_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="right_calf_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="right_forearm_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="right_thigh_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="shoulders_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <attribute name="waist_in_inches" optional="YES" attributeType="Decimal" minValueString="0"/>
+        <relationship name="body_measurement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BodyMeasurement" inverseName="tape_measurement" inverseEntity="BodyMeasurement"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

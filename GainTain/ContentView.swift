@@ -15,41 +15,28 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: ListWorkouts()) {
-                    HStack {
-                        Text("Edit Workouts")
-                        Image(systemName: "arrow.right")
-                    }
-                    .padding()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .background(RoundedRectangle(cornerRadius: 16))
-                    .padding()
+                    navButton(text: "Edit Workouts")
                 }
                 NavigationLink(destination: ListExercises()) {
-                    HStack {
-                        Text("Edit Exercises")
-                        Image(systemName: "arrow.right")
-                    }
-                    .padding()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .background(RoundedRectangle(cornerRadius: 16))
-                    .padding()
+                    navButton(text: "Edit Exercises")
                 }
                 NavigationLink(destination: PerformWorkout()) {
-                    HStack {
-                        Text("Do a workout!")
-                        Image(systemName: "arrow.right")
-                    }
-                    .padding()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .background(RoundedRectangle(cornerRadius: 16))
-                    .padding()
+                    navButton(text: "Do a workout!")
                 }
-
+                NavigationLink(destination: ListBodyMeasurements()) {
+                    navButton(text: "Track Progress")
+                }
             }
         }
+    }
+    
+    private func navButton(text: String) -> some View {
+        FullWidthButton(
+            HStack {
+                Text(text)
+                Image(systemName: "arrow.right")
+            }
+        )
     }
 }
 

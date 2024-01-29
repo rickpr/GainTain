@@ -35,25 +35,11 @@ struct RestTimer: View {
         Button(action: {
             timeEndsAt = Date().timeIntervalSinceReferenceDate + Double(timeInSeconds)
             timeRemaining = Double(timeInSeconds)
-        }) {
-            Text(timeText)
-                .padding()
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .background(RoundedRectangle(cornerRadius: 16))
-                .padding()
-        }
+        }) { FullWidthButton(Text(timeText)) }
     }
     
     private func stopTimeButton(timeText: String) -> some View {
-        Button(action: { self.timeEndsAt = nil }) {
-            Text(timeText)
-                .padding()
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .background(RoundedRectangle(cornerRadius: 16))
-                .padding()
-        }
+        Button(action: { timeEndsAt = nil }) { FullWidthButton(Text(timeText)) }
     }
     
     private func prettyTime() -> String {
